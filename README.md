@@ -9,6 +9,14 @@ The method achieves 95% top-1 accuracy on the ImageNet-1K validation set, but dr
 Shuffling is a way to break this default ordering, and the performance drops a lot.
 
 ![Image](https://github.com/user-attachments/assets/f4c9d2a6-b602-456e-878d-797f175ae3e1)
+
+
+https://github.com/nick-nikzad/SATA/issues/2#issuecomment-3112310860
+
+I did the experiment with batch size of 1 without any other changes. The final result is 80.64%,  which is even lower than off-the-shelf deit-b's 82%. 
+
+![Image](https://github.com/user-attachments/assets/5e8f8a4d-8c20-4724-883d-a473faf64b0b)
+
 ---
 
 # SATA: Spatial Autocorrelation Token Analysis for Enhancing the Robustness of Vision Transformers
