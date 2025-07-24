@@ -4,18 +4,23 @@
 https://github.com/nick-nikzad/SATA/issues/2#issuecomment-3112310860
 
 The method achieves 95% top-1 accuracy on the ImageNet-1K validation set, but drops to 50% after shuffling. This suggests SATA may be exploiting the default ordering of the dataset—where samples are sorted by class (e.g., the first 50 images are class 0, the next 50 are class 1, and so on)—rather than truly learning from image content.
-![Image](https://github.com/user-attachments/assets/0a755615-fccb-4944-b662-683b25a05fdf)
+<!-- ![Image](https://github.com/user-attachments/assets/0a755615-fccb-4944-b662-683b25a05fdf) -->
+
+![Image](img/image1.png)
 
 Shuffling is a way to break this default ordering, and the performance drops a lot.
 
-![Image](https://github.com/user-attachments/assets/f4c9d2a6-b602-456e-878d-797f175ae3e1)
+<!-- ![Image](https://github.com/user-attachments/assets/f4c9d2a6-b602-456e-878d-797f175ae3e1) -->
 
+![Image](img/image2.png)
 
 https://github.com/nick-nikzad/SATA/issues/2#issuecomment-3112310860
 
 I did the experiment with batch size of 1 without any other changes. The final result is 80.64%,  which is even lower than off-the-shelf deit-b's 82%. 
 
-![Image](https://github.com/user-attachments/assets/5e8f8a4d-8c20-4724-883d-a473faf64b0b)
+<!-- ![Image](https://github.com/user-attachments/assets/5e8f8a4d-8c20-4724-883d-a473faf64b0b) -->
+
+![Image](img/bs1.png)
 
 ---
 
