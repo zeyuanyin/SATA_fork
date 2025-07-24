@@ -1,5 +1,5 @@
 # ⚠️ Important Note on SATA Evaluation Results
-> **This method should not be considered valid for CVPR-level publication without addressing critical evaluation flaws.**
+> **This CVPR-level publication will be more solid if authors could address several critical issues in the evaluation.**
 
 https://github.com/nick-nikzad/SATA/issues/2#issuecomment-3112310860
 
