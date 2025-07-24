@@ -9,8 +9,8 @@ import torchvision.datasets as datasets
 from torchvision import transforms
 from torchvision.transforms.functional import InterpolationMode
 
-from thop import profile
-
+# from thop import profile
+import tqdm
 
 def evaluate_imagenet(args):
     # Set device
@@ -34,7 +34,7 @@ def evaluate_imagenet(args):
 
     # Load ImageNet dataset
     imagenet_dataset = datasets.ImageFolder(args.data_path, transform=data_transform)
-    dataloader = torch.utils.data.DataLoader(imagenet_dataset, batch_size=args.batch_size, shuffle=False, num_workers=4)
+    dataloader = torch.utils.data.DataLoader(imagenet_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4)
     
     # Apply sata patch
     # if args.sata:
@@ -61,7 +61,9 @@ def evaluate_imagenet(args):
     start = time.time()
     with torch.autocast(device.type, enabled=False):
         with torch.no_grad():
-            for inputs, labels in dataloader:
+            for inputs, labels in tqdm.tqdm(dataloader):
+                # print(labels)
+                # exit()
                 batch_count += 1
     
                 inputs, labels = inputs.to(device), labels.to(device)

@@ -1,3 +1,16 @@
+# ⚠️ Important Note on SATA Evaluation Results
+> **This method should not be considered valid for CVPR-level publication without addressing critical evaluation flaws.**
+
+https://github.com/nick-nikzad/SATA/issues/2#issuecomment-3112310860
+
+The method achieves 95% top-1 accuracy on the ImageNet-1K validation set, but drops to 50% after shuffling. This suggests SATA may be exploiting the default ordering of the dataset—where samples are sorted by class (e.g., the first 50 images are class 0, the next 50 are class 1, and so on)—rather than truly learning from image content.
+![Image](https://github.com/user-attachments/assets/0a755615-fccb-4944-b662-683b25a05fdf)
+
+Shuffling is a way to break this default ordering, and the performance drops a lot.
+
+![Image](https://github.com/user-attachments/assets/f4c9d2a6-b602-456e-878d-797f175ae3e1)
+---
+
 # SATA: Spatial Autocorrelation Token Analysis for Enhancing the Robustness of Vision Transformers
 
 Spatial Autocorrelation Token Analysis (SATA) enhances the robustness and efficiency of Vision Transformers (ViTs) without retraining. While previous efforts to improve ViTs relied on heavy training strategies, augmentation, or structural changes, SATA leverages spatial relationships between token features. By grouping tokens based on spatial autocorrelation scores before the Feed-Forward Network (FFN) block, it boosts both representational power and computational efficiency. SATA integrates seamlessly with pre-trained ViTs and achieves state-of-the-art results on **ImageNet-1K (94.9% top-1)** and robustness benchmarks like **ImageNet-A (63.6%)**, **ImageNet-R (79.2%)**, and **ImageNet-C (mCE 13.6%)**— **all without additional training or fine-tuning**.
